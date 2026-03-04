@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //deepcloning 
+       // deep cloning is copy the whole object and  array or nested things.
+    //    cloning with duplicate memory. i will not affect original
+let user = {
+  name: "Harish",
+  address: {
+    city: "Chennai"
+  },
+  skills: ["Java", "JS"]
+};
+
+//using structuredClone , it is js built inmethod to create a deep  copy.
+let copy = structuredClone(user);  
+
+copy.address.city = "Madurai";
+copy.skills.push("React");
+
+console.log("Original:", user);
+console.log("Copy:", copy);
+
+    </script>
+</body>
+</html>

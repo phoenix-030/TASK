@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Debounce Example</title>
+  </head>
+  <body>
+    <h2>Example of debouceing</h2>
+    <input type="search" id="search" placeholder="Type ..." />
+
+    <script>
+      let input = document.getElementById("search");
+      input.addEventListener("input", (e) => {
+        debouncedFunction(e.target.value);
+      });
+
+      function debounce(fun, delay) {
+        let timer;
+        return function (...args) {
+          clearTimeout(timer);
+
+          timer = setTimeout(() => {
+            fun(...args);
+          }, delay);
+        };
+      }
+
+      function searchData(value) {
+        console.log("Searching for: " + value);
+      }
+
+      let debouncedFunction = debounce(searchData, 1000);
+    </script>
+  </body>
+</html>

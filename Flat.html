@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+//without using  flat() methodd to flattent the array .
+        let arr=[1,[2,3,[4,5]],6,[7,8],9,10]
+    
+let result=[]
+        function flat(arr){
+        arr.forEach(item => {
+            if(Array.isArray(item)){
+                flat(item)
+            }
+            else{
+               result.push(item)
+            }
+        });
+        }
+    flat(arr) 
+    console.log("Result",result)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Write a function that returns only unique values, without set().
+
+
+let number=[1,2,2,3,4,5,6,7,8,8,9,10,10,9,10]
+function unique(arr){
+    let unique=[]
+    for(let i=0;i<arr.length;i++){
+        if(unique.indexOf(arr[i])===-1){
+            unique.push(arr[i])
+        }
+    }
+    return unique   
+   
+}
+ 
+
+console.log("unique",unique(number))
+
+    </script>
+</body>
+</html>

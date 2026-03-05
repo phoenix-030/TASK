@@ -8,27 +8,31 @@
     <input type="search" id="search" placeholder="Type ..." />
 
     <script>
+      //geting the  input element to adding event listener
       let input = document.getElementById("search");
       input.addEventListener("input", (e) => {
         debouncedFunction(e.target.value);
       });
+//createa a fuction that it return new fuction when delay
+      function debounce(fun, delay) {   //!function  is the searchData function, delay is 1000ms
+        let timer; //this timer is used to store the settimeout
 
-      function debounce(fun, delay) {
-        let timer;
+        //clouser that function give the parameter of function and delay
         return function (...args) {
+          //clear the previous timeout if it already exists
           clearTimeout(timer);
-
+          //set new timeout to execute pannum antha fuction delayku aprma
           timer = setTimeout(() => {
-            fun(...args);
-          }, delay);
+            fun(...args);//
+          }, delay);//
         };
       }
-
+      /*ithu function ellam execute aagum after the delay*/
       function searchData(value) {
         console.log("Searching for: " + value);
       }
 
-      let debouncedFunction = debounce(searchData, 1000);
+      let debouncedFunction = debounce(searchData, 1000);// intha value tha fuctionuku namba pass panirukom
     </script>
   </body>
 </html>

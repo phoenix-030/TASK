@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Throttle Example</title>
+  </head>
+
+  <body>
+    <h2>Throttle Example</h2>
+    <button id="btn">Click Me</button>
+
+    <script>
+      function throttle(func, delay) {
+        let isRunning;
+        return function () {
+          if (!isRunning) {
+            func();
+            isRunning = true;
+            setTimeout(() => {
+              isRunning = false;
+            }, delay);
+          }
+        };
+      }
+      function sayHello() {
+      console.log("clicked")
+      }
+      let throttledFunction = throttle(sayHello, 2000);
+      document.getElementById("btn").addEventListener("click", throttledFunction);
+    </script>
+  </body>
+</html>

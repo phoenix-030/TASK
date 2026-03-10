@@ -23,8 +23,8 @@
       function sayHello() {
       console.log("clicked")
       }
-      let throttledFunction = throttle(sayHello, 2000);
-      document.getElementById("btn").addEventListener("click", throttledFunction);
+      let throttled = throttle(sayHello, 2000);
+      document.getElementById("btn").addEventListener("click", throttled);
     </script>
   </body>
 </html>

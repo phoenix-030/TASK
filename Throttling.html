@@ -1,22 +1,22 @@
 <!doctype html>
 <html>
   <head>
-    <title>Throttle Example</title>
+    <title>Document</title>
   </head>
-
+  
   <body>
     <h2>Throttle Example</h2>
-    <button id="btn">Click Me</button>
-
+    <button id="btn">Click Me</button>  
     <script>
+      document.getElementById("btn").addEventListener("click", throttled);
       function throttle(func, delay) {
-        let isRunning;
+        let run;
         return function () {
-          if (!isRunning) {
+          if (!run) {
             func();
-            isRunning = true;
+            run = true;
             setTimeout(() => {
-              isRunning = false;
+              run = false;
             }, delay);
           }
         };
@@ -24,8 +24,7 @@
       function sayHello() {
       console.log("clicked")
       }
-      let throttledFunction = throttle(sayHello, 2000);
-      document.getElementById("btn").addEventListener("click", throttledFunction);
+      let throttled = throttle(sayHello, 2000);
     </script>
   </body>
 </html>

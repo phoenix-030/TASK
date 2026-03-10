@@ -11,7 +11,7 @@
       function throttle(func, delay) {
         let run;
         return function () {
-          if (!isRunning) {
+          if (!run) {
             func();
             run = true;
             setTimeout(() => {

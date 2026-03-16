@@ -5,9 +5,7 @@ let sum=amount.reduce((acc,cur)=>acc+cur,0)
 console.log("Sum :",sum)
 
 //flat and reduce using to find the number of charachter in the array
-let arr=[['a','b','c'],
-            ['c','d','f'],
-            ['d','f','g']]
+let arr=[['a','b','c'],['c','d','f'],   ['d','f','g']]
  let result=arr.flat().reduce((accu,current)=>{
                 if(accu[current]){
                     accu[current]++

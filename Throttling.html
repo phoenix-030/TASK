@@ -6,7 +6,8 @@
   
   <body>
     <h2>Throttle Example</h2>
-    <button id="btn">Click Me</button>  
+    <button id="btn">Click Me</button>
+
     <script>
       document.getElementById("btn").addEventListener("click", throttled);
       function throttle(func, delay) {
@@ -24,7 +25,8 @@
       function sayHello() {
       console.log("clicked")
       }
-      let throttled = throttle(sayHello, 2000);
+      let throttledFunction = throttle(sayHello, 2000);
+      document.getElementById("btn").addEventListener("click", throttledFunction);
     </script>
   </body>
 </html>

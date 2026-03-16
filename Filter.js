@@ -26,6 +26,10 @@ let data=[
 let ages=data.filter((data)=>data.age<=18)
 console.log("age",ages)
 
+
+
+
+
 //Reduce imported from the Reduce.js file
 console.log("-----------------------Reduce------------------------")
 reduce()

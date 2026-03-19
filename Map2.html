@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        let numbers = [1,2,3,4,5,5];
+        function map(arr, call) {
+        let result = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            result.push(call(arr[i]));  //callback the current value
+        }
+        return result;
+        }
+let multi = map(numbers, function(num) {  // invoke the map fuction to number and call the number
+    return num * 2;
+});
+
+console.log(multi);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>//given array val
+        let numbers = [1,2,4,5,6,8,4,10,12,13,14,15];
+
+        function filter(arr, call) {//creta fuction to filter the val
+    let result = [];//emmpty array to store too result
+    for (let i = 0; i < arr.length; i++) {
+        if (call(arr[i])) { //callback the current value and check the condition
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+let even = filter(numbers, function(num) {
+    return num % 2 == 0;
+});
+console.log(even);
+    </script>
+</body>
+</html>

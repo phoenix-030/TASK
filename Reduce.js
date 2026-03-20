@@ -37,4 +37,29 @@ console.log("Item :",itm)
 export default reduce;
 
 
+//without funcition
+let numbers=[23,4,3,235,64,23,5,6,7,8,9]
 
+let resust=[]
+for(let i=0;i<numbers.length;i++)
+    {
+
+   resust.push(numbers[i]+numbers[i])
+}
+
+console.log(resust)
+
+//with function
+
+function reduce(arr, initialValue) {
+    let acc = []
+
+    for (let i = 0; i < arr.length; i++) {
+        initialValue += arr[i];
+    }
+
+    return acc;
+}
+
+let name=reduce([1,2,3,4], 0)
+console.log(name);

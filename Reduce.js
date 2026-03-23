@@ -51,15 +51,16 @@ console.log(resust)
 
 //with function
 
-function reduce(arr, initialValue) {
-    let acc = []
+    
+       function reducee(arr, current) {
+    let acc = current;
 
     for (let i = 0; i < arr.length; i++) {
-        initialValue += arr[i];
+        acc =acc+ arr[i];
     }
 
     return acc;
 }
 
-let name=reduce([1,2,3,4], 0)
-console.log(name);
+ let name=reducee([1,2,3,4,5,6], 0)//pass the value to fuction
+console.log("total valuee: ", name);

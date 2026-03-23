@@ -1,36 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-       //deepcloning 
-       // deep cloning is copy the whole object and  array or nested things.
-    //    cloning with duplicate memory. i will not affect original
-let user = {
-  name: "Harish",
-  address: {
-    city: "Chennai"
-  },
-  skills: ["Java", "JS"] 
-};
+      //deepcloning
+      // deep cloning is copy the whole object and  array or nested things.
+      //    cloning with duplicate memory. i will not affect original
+      let user = {
+        name: "Harish",
+        address: {
+          city: "Chennai",
+        },
+        skills: ["Java", "JS"],
+      };
 
-//using structuredClone , it is js built inmethod to create a deep  copy.
-let copy = structuredClone(user);  
+      //using structuredClone , it is js built inmethod to create a deep  copy.
+      let copy = structuredClone(user);
 
-copy.address.city = "Madurai";
-copy.skills.push("React");
+      copy.address.city = "Madurai";
+      copy.skills.push("React");
 
-console.log("Original:", user);
-console.log("Copy:", copy);
-// --------------------------------
+      console.log("Original:", user);
+      console.log("Copy:", copy);
+  
+
+    
+
+      // ==============================
+
+  function details() {
+
+  let person = {
+    name: "Harish",
+    age: 22,
+    address: {
+      city: "Chidambaram"
+    }
+  };
+
+  // Deep cloning the object
+  let newdata = JSON.parse(JSON.stringify(person));
+
+  // Changing copied object value
+  newdata.address.city = "Chennai";
+
+  console.log("original city:", person.address.city);
+  console.log("copied city:", newdata.address.city);
+}
+
+details();
+
+///===============================
+function deepclonee(obj) {
+            if (typeof obj !== 'object' || obj === null) {
+                return obj;
+            }
+
+            let clone = Array.isArray(obj) ? [] : {};
+
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    clone[key] = deepclonee(obj[key]);
+                }
+            }
+
+            return clone;
+        }
+
+        let origi = {
+            name: "Harish",
+            skills: ["JS", "React"],
+            address: {
+                city: "Chidambaram"
+            }
+        };
+
+        let copy2 = deepclonee(origi);
+
+        copy2.address.city = "Chennai";
+
+        console.log("oringin:",origi.address.city); 
+        console.log("duplicate:",copy2.address.city);     
+
+
     </script>
-
-
-
-   
-</body>
+  </body>
 </html>
